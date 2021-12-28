@@ -1,0 +1,9 @@
+{
+    "version": "1.0",
+    "defaultProvider": "cdnjs",
+    "libraries": [],
+
+    "ApiKeys": {
+        "Stocks": "0P3D37CUGG7WAALY"
+    }
+}

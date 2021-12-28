@@ -12,6 +12,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Currencies\Create.cshtml" />
+    <None Include="Views\Currencies\Delete.cshtml" />
+    <None Include="Views\Currencies\Details.cshtml" />
+    <None Include="Views\Currencies\Edit.cshtml" />
+    <None Include="Views\Currencies\Index.cshtml" />
+    <None Include="Views\Markets\Create.cshtml" />
+    <None Include="Views\Markets\Delete.cshtml" />
+    <None Include="Views\Markets\Details.cshtml" />
+    <None Include="Views\Markets\Edit.cshtml" />
+    <None Include="Views\Markets\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
       <PrivateAssets>all</PrivateAssets>
