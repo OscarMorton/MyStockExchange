@@ -1,0 +1,355 @@
+{
+    "Countries": [
+        {
+            "CountryId": 451,
+            "Name": "Afghanistan",
+            "ApiName": "AFG",
+            "Currencies": [
+                {
+                    "CurrencyId": 329,
+                    "Code": "AFN",
+                    "Name": "Afghan afghani",
+                    "Symbol": "؋"
+                }
+            ]
+        },
+        {
+            "CountryId": 452,
+            "Name": "Åland Islands",
+            "ApiName": "ALA",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 456,
+            "Name": "Andorra",
+            "ApiName": "AND",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 465,
+            "Name": "Austria",
+            "ApiName": "AUT",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 472,
+            "Name": "Belgium",
+            "ApiName": "BEL",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 511,
+            "Name": "Cyprus",
+            "ApiName": "CYP",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 522,
+            "Name": "Estonia",
+            "ApiName": "EST",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 527,
+            "Name": "Finland",
+            "ApiName": "FIN",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 528,
+            "Name": "France",
+            "ApiName": "FRA",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 529,
+            "Name": "French Guiana",
+            "ApiName": "GUF",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 531,
+            "Name": "French Southern Territories",
+            "ApiName": "ATF",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 535,
+            "Name": "Germany",
+            "ApiName": "DEU",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 538,
+            "Name": "Greece",
+            "ApiName": "GRC",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 541,
+            "Name": "Guadeloupe",
+            "ApiName": "GLP",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 550,
+            "Name": "Vatican City",
+            "ApiName": "VAT",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 560,
+            "Name": "Ireland",
+            "ApiName": "IRL",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 563,
+            "Name": "Italy",
+            "ApiName": "ITA",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 574,
+            "Name": "Latvia",
+            "ApiName": "LVA",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 580,
+            "Name": "Lithuania",
+            "ApiName": "LTU",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 581,
+            "Name": "Luxembourg",
+            "ApiName": "LUX",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 589,
+            "Name": "Malta",
+            "ApiName": "MLT",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 591,
+            "Name": "Martinique",
+            "ApiName": "MTQ",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 594,
+            "Name": "Mayotte",
+            "ApiName": "MYT",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 598,
+            "Name": "Monaco",
+            "ApiName": "MCO",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 600,
+            "Name": "Montenegro",
+            "ApiName": "MNE",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 608,
+            "Name": "Netherlands",
+            "ApiName": "NLD",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        },
+        {
+            "CountryId": 630,
+            "Name": "Portugal",
+            "ApiName": "PRT",
+            "Currencies": [
+                {
+                    "CurrencyId": 330,
+                    "Code": "EUR",
+                    "Name": "Euro",
+                    "Symbol": "€"
+                }
+            ]
+        }
+    ]
+}
