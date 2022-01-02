@@ -5,12 +5,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiCountryLib
-{
-    public class ApiCountryClient
-    {
-        public ApiCountryClient(string url, int version)
-        {
+namespace ApiCountryLib {
+
+    public class ApiCountryClient {
+
+        public ApiCountryClient(string url, int version) {
             this.mUrl = url;
             Version = version;
         }
@@ -21,13 +20,30 @@ namespace ApiCountryLib
 
         protected HttpClient client { get; set; }
 
-
-
-        protected string GetRelative(string name)
-        {
-            return $"/v{Version}/{name}";
+        protected string GetRelative(string name) {
+            return $"{name}";
         }
 
+        public async Task<List<MyJsonCountry>> GetCountriesFromJsonServer() {
+            client = new HttpClient();
+
+            client.BaseAddress = new Uri(this.mUrl);
+
+            var response = await client.GetAsync(GetRelative("MyStockExchange/Countries"));
+
+            if (response.IsSuccessStatusCode) {
+                // Ya no hace falta, estoy convirtiendo el json directamente a mis clases
+                string chorizoJson = await response.Content.ReadAsStringAsync();
+
+                return await response.Content.ReadAsAsync<List<MyJsonCountry>>();
+            }
+            else {
+            }
+
+            return null;
+        }
+
+        /**
         public async Task<List<Country>> GetCountries()
         {
             client = new HttpClient();
@@ -39,7 +55,6 @@ namespace ApiCountryLib
 
             var response = await client.GetAsync( GetRelative("all") );
 
-
             if ( response.IsSuccessStatusCode )
             {
                 // Ya no hace falta, estoy convirtiendo el json directamente a mis clases
@@ -49,10 +64,11 @@ namespace ApiCountryLib
             }
             else
             {
-
             }
 
             return null;
         }
+
+        */
     }
 }

@@ -8,44 +8,34 @@ using Microsoft.EntityFrameworkCore;
 using BagLib;
 using BagLib.Models;
 
-namespace BagMVC.Controllers
-{
-    public class CountriesController : _BaseController
-    {
-  
-        public CountriesController(BagContext context) : base(context)
-        {
+namespace BagMVC.Controllers {
+
+    public class CountriesController : _BaseController {
+
+        public CountriesController(BagContext context) : base(context) {
         }
 
         // GET: Countries
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return base.View(
                 await _context.GetCountriesAsync()
                 );
         }
 
-
-
         // GET: Countries/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
+        public async Task<IActionResult> Details(int? id) {
+            if (id == null) {
                 return NotFound();
             }
 
             Country country = await _context.GetCountryAsync(id);
 
-            if (country == null)
-            {
+            if (country == null) {
                 return NotFound();
             }
 
             return View(country);
         }
-
-
 
         //// GET: Countries/Create
         //public IActionResult Create()
@@ -129,17 +119,14 @@ namespace BagMVC.Controllers
         //}
 
         // GET: Countries/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
+        public async Task<IActionResult> Delete(int? id) {
+            if (id == null) {
                 return NotFound();
             }
 
             var country = await _context.Country
                 .FirstOrDefaultAsync(m => m.CountryId == id);
-            if (country == null)
-            {
+            if (country == null) {
                 return NotFound();
             }
 
@@ -149,44 +136,37 @@ namespace BagMVC.Controllers
         // POST: Countries/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
+        public async Task<IActionResult> DeleteConfirmed(int id) {
             var country = await _context.Country.FindAsync(id);
             _context.Country.Remove(country);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Update()
-        {
-            ApiCountryLib.ApiCountryClient myApi = new ApiCountryLib.ApiCountryClient("https://restcountries.com", 2);
+        public async Task<IActionResult> Update() {
+            ApiCountryLib.ApiCountryClient myApi = new ApiCountryLib.ApiCountryClient("https://my-json-server.typicode.com/OscarMorton/StockExchage", 2);
 
-            var myResult = await myApi.GetCountries();
+            var myResult = await myApi.GetCountriesFromJsonServer();
 
-            foreach ( var country in myResult )
-            {
+            foreach (var country in myResult) {
                 // 1. Compruebo que exista país
-                var dbCountry = await _context.GetCountryByNameAsync(country.name);
+                var dbCountry = await _context.GetCountryByNameAsync(country.Name);
 
                 // 1.2 Si no existe, inserto el país
-                if ( dbCountry==null )
-                {
-                    dbCountry = new Country(country.name);
+                if (dbCountry == null) {
+                    dbCountry = new(country.Name);
 
-                    dbCountry= await _context.InsertCountryAsync(dbCountry);
+                    dbCountry = await _context.InsertCountryAsync(dbCountry);
                 }
 
-                if ( country.currencies!=null )
-                {
+                if (country.Currencies != null) {
                     // Para cada moneda
-                    foreach (var currency in country.currencies )
-                    {
+                    foreach (var currency in country.Currencies) {
                         // 2. Compruebo si existe la moneda
                         var dbCurrency = await _context.GetCurrencyAsync(currency.code);
 
                         // 2.1 Si no existe, inserto la moneda
-                        if ( dbCurrency == null )
-                        {
+                        if (dbCurrency == null) {
                             dbCurrency = new(currency.code, currency.name, currency.symbol);
 
                             dbCurrency = await _context.InsertCurrencyAsync(dbCurrency);
@@ -202,30 +182,22 @@ namespace BagMVC.Controllers
                         var currencyCountry = dbCountry.Currencies.FirstOrDefault(d => d.Code == dbCurrency.Code);
 
                         // 3.1 Si no la tiene, la inserto
-                        if ( currencyCountry == null )
-                        {
+                        if (currencyCountry == null) {
                             dbCountry.Currencies.Add(dbCurrency);
 
                             await _context.SaveChangesAsync();
                         }
                     }
                 }
-                else
-                {
+                else {
                     // Países sin moneda
                 }
-
-                
-
-
             }
-            
 
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CountryExists(int id)
-        {
+        private bool CountryExists(int id) {
             return _context.Country.Any(e => e.CountryId == id);
         }
     }
