@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BagLib.Models {
+namespace BagLib.Models
+{
+    public class MyStock
+    {
 
-    public class MyStock {
         public int MyStockId { get; set; }
 
         [Required]
@@ -19,6 +21,9 @@ namespace BagLib.Models {
         [Required]
         public DateTime BuyDate { get; set; }
 
+
+
+
         public int StockId { get; set; }
 
         public Stock Stock { get; set; }
@@ -27,4 +32,6 @@ namespace BagLib.Models {
 
         public BagUser BagUser { get; set; }
     }
+
 }
+
