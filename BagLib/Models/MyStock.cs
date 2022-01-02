@@ -9,6 +9,7 @@ namespace BagLib.Models
 {
     public class MyStock
     {
+
         public int MyStockId { get; set; }
 
         [Required]
@@ -21,6 +22,8 @@ namespace BagLib.Models
         public DateTime BuyDate { get; set; }
 
 
+
+
         public int StockId { get; set; }
 
         public Stock Stock { get; set; }
@@ -29,4 +32,6 @@ namespace BagLib.Models
 
         public BagUser BagUser { get; set; }
     }
+
 }
+

@@ -24,7 +24,7 @@ namespace BagMVC.Controllers {
         }
 
         protected ApiStockClient GetStockApiClient() {
-            return new(_configuration["ApiStocksUrl"], _configuration["StockApiKey"]);
+            return new(_configuration["ApiStocksUrl"], _configuration["ApiKeys:Stocks"]);
         }
 
         //protected async Task<Stock> CheckAndCreate(Company company)
