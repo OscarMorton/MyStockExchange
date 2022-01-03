@@ -1,3 +1,6 @@
+using BagLib;
+using BagMVC.Services.Impl;
+using BagMVC.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,35 +13,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BagMVC
-{
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
+namespace BagMVC {
+
+    public class Startup {
+
+        public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllersWithViews();
+        public void ConfigureServices(IServiceCollection services) {
+            var mvc = services.AddControllersWithViews();
 
-            services.AddDbContext<BagLib.BagContext>(options =>
+            // Adding the country context to the service, using dependency injection.
+            services.AddHttpClient<ICountry, CountryImpl>();
+            services.AddHttpClient<ICurrency, CurrencyImpl>();
+
+            services.AddSingleton<ICountry, CountryImpl>();
+            services.AddSingleton<ICurrency, CurrencyImpl>();
+
+            services.AddDbContext<BagContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BagContext")));
+
+#if (DEBUG)
+            mvc.AddRazorRuntimeCompilation();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
+            else {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
@@ -50,8 +59,7 @@ namespace BagMVC
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
+            app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
